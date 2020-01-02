@@ -11,6 +11,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
+	<jsp:include page="../Main/memtop.jsp" />
+</div>
 <form:form action="carEnrollmentModifyPro" method="post" commandName="carWriterCommand" enctype="multipart/form-data">
 ${carDTO.driveName}<br />
 ${carDTO.driveAge}<br />
