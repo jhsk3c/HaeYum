@@ -19,6 +19,10 @@
 			<td>${qna.qnaBoardSubject}</td>
 		</tr>
 		<tr>
+			<td>작성자</td>
+			<td>${qna.memDTO.memId}</td>
+		</tr>
+		<tr>
 			<td>분류</td>
 			<td>${qna.qnaClassiFication}</td>
 		</tr>
@@ -28,19 +32,21 @@
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td>${qna.qnaBoardContent}</td>
+			<td><textarea cols="30" rows="10">${qna.qnaBoardContent}</textarea></td>
 		</tr>
 		<tr>
 			<td>파일</td>
 			<td><c:forEach var="qna" items="${store}" varStatus="status">
-					<img src="../Qna/upload/${qna}" class="w3-round" alt="Norway" >
+					<img src="../Qna/upload/${qna}" width="200" height="100">
 		${original[status.index]} <br />
 					<!-- 파일이름  -->
 				</c:forEach></td>
 		</tr>
 		<tr>
 			<td colspan="2">
-				<a href="qnaBoardReply?num=${qna.qnaBoardNum}">답변</a>
+			<c:if test="${memLev == 4 }">
+				<a href="qnaBoardReply?qnaBoardNum=${qna.qnaBoardNum}">답변</a>
+			</c:if>
 				<a href="qnaList">목록</a>
 			</td>
 		</tr>

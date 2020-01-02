@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import Command.CarReserVation.CarReserVationCommand;
+import Service.CarCalendarReservation.CarCalendarParticipantUpdateService;
 import Service.CarCalendarReservation.CarCalendarReservationDetailService;
 import Service.CarCalendarReservation.CarCalendarReservationInsertProService;
 import Service.CarCalendarReservation.CarCalendarReservationListService;
@@ -23,6 +24,9 @@ public class CarCalendarReservationController { //일정예약 컨트롤
 	@Autowired
 	CarCalendarReservationDetailService carCalendarReservationDetailService; //일정 상세정보
 	
+	@Autowired
+	CarCalendarParticipantUpdateService carCalendarParticipantUpdateService; // 예약등록시  참여인원 증가 .
+	
 	@RequestMapping("/Car/carCalendaReservation") //예약 폼
 	public String carCalendarReservationForm(@RequestParam(value = "calendarNumber") Long calendarNumber, CarReserVationCommand carReserVationCommand,Model model) {
 		return "Car/car_calendar_reservation";
@@ -32,7 +36,8 @@ public class CarCalendarReservationController { //일정예약 컨트롤
 	public String carCalendarReservationInsertPro(@RequestParam(value = "calendarNumber") Integer calendarNumber, CarReserVationCommand carReserVationCommand) { //회원이 예약 등록.
 		System.out.println("calendarNumbercalendarNumbercalendarNumbercalendarNumbercalendarNumbercalendarNumber" + calendarNumber);
 			carCalendarReservationInsertProService.carReservationInsertPro(calendarNumber,carReserVationCommand); //예약 등록 서비스
-		return "redirect:/Car/carPayment";
+		
+		return "redirect:/Car/carCalendaReservationList";
 	}
 	
 	@RequestMapping("/Car/carCalendaReservationList") //예약 리스트

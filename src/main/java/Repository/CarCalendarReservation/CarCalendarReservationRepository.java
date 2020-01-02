@@ -17,10 +17,10 @@ public class CarCalendarReservationRepository {
 	private SqlSession sqlSession;
 	private final String namespace = "Repository.CarCalendarReservation.CarCalendarReservationMapper";
 	
-	public void carCalendarReservationInsert(CarCalendarReservationDTO carCalendarReservationDTO) {
+	public Integer carCalendarReservationInsert(CarCalendarReservationDTO carCalendarReservationDTO) {
 		
 	 String statement = namespace + ".carCalendarReservationInsert";
-	  sqlSession.insert(statement,carCalendarReservationDTO);
+	 	return  sqlSession.insert(statement,carCalendarReservationDTO);
 		
 	}
 	

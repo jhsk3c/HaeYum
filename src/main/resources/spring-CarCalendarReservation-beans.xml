@@ -13,4 +13,5 @@
 <bean id = "carCalendaReservationCheckService" class = "Service.CarCalendarReservation.CarCalendaReservationCheckService" />
 <bean id = "carCalendarReservationListService" class="Service.CarCalendarReservation.CarCalendarReservationListService" />
 <bean id = "carCalendarReservationDetailService" class="Service.CarCalendarReservation.CarCalendarReservationDetailService" />
+<bean id = "carCalendarParticipantUpdateService" class="Service.CarCalendarReservation.CarCalendarParticipantUpdateService" />
 </beans>

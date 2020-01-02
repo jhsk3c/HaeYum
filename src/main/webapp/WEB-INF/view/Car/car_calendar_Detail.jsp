@@ -28,6 +28,9 @@ $(function(){ //예약 페이지 팝업 창
 </script>
 </head>
 <body>
+<div>
+	<jsp:include page="../Main/memtop.jsp" />
+</div>
 	<table border="1">
 		<tr>
 			<td>ID</td>

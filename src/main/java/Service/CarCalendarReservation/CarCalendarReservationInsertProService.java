@@ -25,11 +25,9 @@ public class CarCalendarReservationInsertProService { // 일정예약 등록 서
 	@Transactional
 	public void carReservationInsertPro(Integer calendarNumber,CarReserVationCommand carReserVationCommand){
 			
-		try {
-		
-		
-			
 		CarCalendarReservationDTO carCalendarReserationDTO = new CarCalendarReservationDTO();
+		
+		try {
 		carCalendarReserationDTO.setCalendarNumber(calendarNumber);
 		System.out.println("캘린더넘버"+carCalendarReserationDTO.getCalendarNumber());
 		
@@ -54,12 +52,13 @@ public class CarCalendarReservationInsertProService { // 일정예약 등록 서
 		System.out.println("carCalendarReserationDTO.setCarEndTime"+ carCalendarReserationDTO.getCarEndTime());
 		carCalendarReserationDTO.setCarName(carReserVationCommand.getCarName());
 		System.out.println("carCalendarReserationDTO.setCarName"+ carReserVationCommand.getCarName());
-		carCalendarReservationRepository.carCalendarReservationInsert(carCalendarReserationDTO);
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
+		Integer i =  carCalendarReservationRepository.carCalendarReservationInsert(carCalendarReserationDTO); //예약 하기 누를시 
+		 
+	
 		
 	}
 }

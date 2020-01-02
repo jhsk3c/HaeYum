@@ -34,7 +34,8 @@ public class QnaWriterProService {
 	public Integer qnaWriterPro(QnaCommand qnaCommand , HttpServletRequest request ,HttpSession session) {
 		
 		QnaDTO qna = new QnaDTO();
-	
+		String memNum = ((AuthInfo)session.getAttribute("authInfo")).getNum();
+		qna.setMemNum(memNum);
 		System.out.println();
 		qna.setQnaBoardSubject(qnaCommand.getQnaSubject());
 		qna.setQnaClassiFication(qnaCommand.getQnaClassiFication());

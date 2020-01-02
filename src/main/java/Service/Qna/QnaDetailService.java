@@ -15,13 +15,12 @@ public class QnaDetailService {
 	QnaRepository qnaRepository;
 	
 	@Transactional
-	public void qnaDetail(Model model,Long num) {
+	public void qnaDetail(Model model,Long qnaBoardNum) {
 		
 		
 		QnaDTO qna = new QnaDTO(); //유저 상세정보
-		qna.setQnaBoardNum(num);
 		
-		 qna = qnaRepository.oneSelect(qna);
+		 qna = qnaRepository.oneSelect(qnaBoardNum);
 		
 		qna.setQnaBoardContent(qna.getQnaBoardContent().replace("\n", "<br />")); 
 		if(qna.getQnaBoardOriginalFileName() != null) {
@@ -41,7 +40,7 @@ public class QnaDetailService {
 		if(!qna.getQnaAnswerCheck().equals("문의 접수")) {
 			QnaDTO qnaAdmin = new QnaDTO(); //관리자 답변
 			System.out.println(qnaAdmin.getQnaBoardContent());
-			qnaAdmin.setQnaBoardNum(num);
+			qnaAdmin.setQnaBoardNum(qnaBoardNum);
 			/*
 			 * qnaAdmin.setUserId("관리자"); //답변글쓸때는 우선 관리자라고 작성할것. 세션 줄때는 세션값 관리자용 쓰기
 			 */			qnaAdmin = qnaRepository.oneSelectAdmin(qnaAdmin);

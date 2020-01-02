@@ -6,6 +6,7 @@ import java.sql.Timestamp;
 @SuppressWarnings("serial")
 public class QnaDTO implements Serializable{ //implements Serializable 는 스프링과 마이바티스할때 필요하다 직렬화시켜주는것이다.
 	
+	private MemberDTO memDTO;
 	private Long qnaBoardNum; //글번호
 	private String memNum; //회원번호
 	private String qnaBoardSubject; //글제목
@@ -19,6 +20,14 @@ public class QnaDTO implements Serializable{ //implements Serializable 는 스�
 	private Long qnaBoardReSeq;
 	private Timestamp qnaRegist; //현재시간
 	private String qnaAnswerCheck; //답변여부 
+	
+	
+	public MemberDTO getMemDTO() {
+		return memDTO;
+	}
+	public void setMemDTO(MemberDTO memDTO) {
+		this.memDTO = memDTO;
+	}
 	public Long getQnaBoardNum() {
 		return qnaBoardNum;
 	}

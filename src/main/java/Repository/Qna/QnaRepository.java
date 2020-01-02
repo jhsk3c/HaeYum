@@ -31,11 +31,11 @@ public class QnaRepository {
 		return sqlSession.selectList(statement,qnaCommand); 
 	}
 	
-	public QnaDTO oneSelect(QnaDTO qna) { //qna 상세보기 
+	public QnaDTO oneSelect(Long qnaBoardNum) { //qna 상세보기 
 		
 		String statement = namespace + ".oneSelectQna";
 		
-		return sqlSession.selectOne(statement,qna);
+		return sqlSession.selectOne(statement,qnaBoardNum);
 	}
 	public QnaDTO oneSelectAdmin(QnaDTO qna) { //관리자 상세보기
 		

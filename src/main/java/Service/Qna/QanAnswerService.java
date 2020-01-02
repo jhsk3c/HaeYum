@@ -14,17 +14,20 @@ public class QanAnswerService {
 	@Autowired
 	QnaRepository qnaRepository;
 	
-	public void qnaAnswer(Long num, Model model) {
+	public void qnaAnswer(Long qnaBoardNum, Model model) {
 		
 		QnaDTO qna = new QnaDTO();
-		qna.setQnaBoardNum(num);
-		qna = qnaRepository.oneSelect(qna);
+		
+			qna = qnaRepository.oneSelect(qnaBoardNum);
+		System.out.println();
 		
 		QnaAnswerReplyCommand qnaAnswerReplyCommand = new QnaAnswerReplyCommand();
+		
 		
 		qnaAnswerReplyCommand.getQnaCommand().setQnaSubject("Re:" + qna.getQnaBoardSubject());
 		qnaAnswerReplyCommand.getQnaCommand().setQnaClassiFication(qna.getQnaClassiFication());
 		qnaAnswerReplyCommand.setQnaBoardNum(qna.getQnaBoardNum().toString());
+		System.out.println(qna.getQnaBoardReLev());
 		qnaAnswerReplyCommand.setQnaBoardReLev(qna.getQnaBoardReLev().toString());
 		qnaAnswerReplyCommand.setQnaBoardReRef(qna.getQnaBoardReRef().toString());
 		qnaAnswerReplyCommand.setQnaBoardReSeq(qna.getQnaBoardReSeq().toString());

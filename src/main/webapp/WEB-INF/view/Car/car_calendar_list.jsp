@@ -16,7 +16,11 @@
 </script>
 </head>
 <body>
-<table border="1">
+<div>
+	<jsp:include page="../Main/memtop.jsp" />
+</div>
+	<h2 align="center">일정 목록</h2>
+<table border="1" align = "center">
 		<tr>
 			<td>일정 번호</td>
 			<td>차 이름</td>
@@ -51,7 +55,9 @@
 		</tr>
 	</c:forEach>
 </table>
-	<a href="carCalendarWriter">일정 등록</a> 
-	<a href="../main">메인</a>
+	<c:if test="${memLev == 6}">
+		<a href="carCalendarWriter">일정 등록</a> 
+	</c:if>
+		<a href="../main" id="main" >메인</a>
 </body>
 </html>

@@ -28,8 +28,8 @@
 	<c:forEach  var="qna" items="${qna}" varStatus="status">
 		<tr>
 			<td>${qna.qnaBoardNum}</td>
-			<td><a href="qnaDetail?num=${qna.qnaBoardNum}">${qna.qnaBoardSubject}</a></td>
-			<td>${qna.userId}</td>
+			<td><a href="qnaDetail?qnaBoardNum=${qna.qnaBoardNum}">${qna.qnaBoardSubject}</a></td>
+			<td>${qna.memDTO.memId}</td>
 			<td>${qna.qnaClassiFication}</td>
 			<td>${qna.qnaAnswerCheck}</td>
 			<td>${qna.qnaRegist}</td>

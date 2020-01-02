@@ -16,13 +16,12 @@ public class QnaListService {
 	@Autowired 
 	private QnaRepository qnaRepository;
 	
-	public String qnaAllSelect(QnaCommand qnaCommand, Model model) {
+	public void qnaAllSelect(QnaCommand qnaCommand, Model model) {
 		
 		List<QnaDTO> list = qnaRepository.allSelectQnaList(qnaCommand);
 		
 		model.addAttribute("qna",list);
-		
-		return "Qna/qnaList";
+	
 	}
 	
 

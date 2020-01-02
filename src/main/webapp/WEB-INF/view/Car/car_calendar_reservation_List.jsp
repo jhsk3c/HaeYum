@@ -21,7 +21,7 @@
 	<td>이용 시작 시간</td>
 	<td>이용 종료 시간</td>
 </tr>
-<c:forEach var="list" items="${carJoinDTO}">
+<c:forEach var="list" items="${carJoinDTO}" >
 <tr>
 	<td><a href="carCalendarReservationDetail?calenderReservationNum=${list.carCalendarReservationDTO.calenderReservationNum}">${list.memDTO.memId}</a></td>
 	<td>${list.carDTO.carName}</td>

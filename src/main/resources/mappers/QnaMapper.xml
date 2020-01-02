@@ -17,6 +17,7 @@
 											
 	<resultMap id="qnaBoard" type="Model.DTO.QnaDTO">	<!-- qna select문  리스트 -->
 		<id column="qna_board_num" jdbcType="BIGINT" property="qnaBoardNum" />
+		<id column="MEM_NUM" jdbcType="VARCHAR" property="memDTO.memNum" />
 		<result column="mem_num" jdbcType="VARCHAR" property="memNum" />
 		<result column="qna_board_subject" jdbcType="VARCHAR" property="qnaBoardSubject" />
 		<result column="qna_board_content" jdbcType="VARCHAR" property="qnaBoardContent" />
@@ -29,22 +30,36 @@
 		<result column="qna_board_re_seq" jdbcType="BIGINT" property="qnaBoardReSeq" />
 		<result column="qna_answer_check" jdbcType="VARCHAR" property="qnaAnswerCheck" />
 		<result column="qna_regist" jdbcType="TIMESTAMP" property="qnaRegist"/>
+		<result column="MEM_ID" jdbcType="VARCHAR" property="memDTO.memId" />		<!-- PK면 id , 나머지는 result -->	<!-- jdbcType == rs.getString -->
+		<result column="MEM_PW" jdbcType="VARCHAR" property="memDTO.memPw"/>		
+		<result column="MEM_NAME" jdbcType="VARCHAR" property="memDTO.memName" />
+		<result column="MEM_BIRTH" jdbcType="TIMESTAMP" property="memDTO.memBirth" />		<!-- 이거 jsp로 어떻게 받아오더라? timestamp가 있었나? ㅇㅇㅇㅇ -->
+		<result column="MEM_SEX" jdbcType="VARCHAR" property="memDTO.memSex" />
+		<result column="MEM_NATIONALITY" jdbcType="VARCHAR" property="memDTO.memNationality" />
+		<result column="MEM_EMAIL" jdbcType="VARCHAR" property="memDTO.memEmail" />
+		<result column="MEM_ADDR" jdbcType="VARCHAR" property="memDTO.memAddr" />
+		<result column="MEM_TEL" jdbcType="TIMESTAMP" property="memDTO.memTel" />	
+		<result column="MEM_PREFER_TRIP" jdbcType="VARCHAR" property="memDTO.memPreferTrip" />
+		<result column="MEM_DATE" jdbcType="TIMESTAMP" property="memDTO.memDate" />
+		<result column="MEM_LEV" jdbcType="INTEGER" property="memDTO.memLev" />
 	</resultMap>
 	
 
 	
-<!-- 	<select id="allSelectQna" p resultMap="qnaBoardListd" >
-	select qna.qna_board_num qna_board_num,qna.qna_board_subject qna_board_subject, mem.mem_name mem_name, qna.qna_classification qna_classification,
-	 qna.qna_answer_check qna_answer_check , qna.qna_regist qna_regist
-	from qna_board qna , member mem
-	where qna.mem_num = mem.mem_num
-	</select> -->
+ 	<select id="allSelectQna" parameterType="Model.DTO.QnaDTO" resultMap="qnaBoard" > <!-- 문의센터 목록 -->
+		select qna.qna_board_num,qna.qna_board_subject,mem.mem_id,qna.qna_classification,
+		qna.qna_answer_check , qna.qna_regist
+		from qna_board qna , member mem
+		where qna.mem_num = mem.mem_num
+	</select> 
 	
 	
 	<select id="oneSelectQna" parameterType="Long" resultMap="qnaBoard"> <!-- 상세보기 내가 누른 글번호에 데이터 보기  -->
-	select * from qna_board 
+		select qna.qna_board_num,qna.qna_board_subject,mem.mem_id,qna.qna_classification,qna.qna_answer_check,qna.qna_board_content,qna.qna_board_originalFile_name,qna.qna_board_storyfile_name,
+		qna.qna_file_size,qna.qna_board_re_ref,qna.qna_board_re_lev,qna.qna_board_re_seq
+		from qna_board qna, member mem
 	<where>
-	qna_board_num = #{qnaBoardNum} 
+	 qna.mem_num = mem.mem_num and qna_board_num = #{qnaBoardNum} 
 	</where>
 	</select>
 	<select id="oneSelectQnaAdmin" parameterType="Long" resultMap="qnaBoard"> <!-- 관리자 답변 상세정보  -->

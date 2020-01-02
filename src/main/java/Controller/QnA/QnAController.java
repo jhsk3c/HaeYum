@@ -57,15 +57,15 @@ public class QnAController {
 	}
 	
 	@RequestMapping("/QnA/qnaDetail") 
-	public String qnaDetail(@RequestParam(value="num") Long num , Model model) { // 1;1문의 상세정보
-		qnaDetailService.qnaDetail(model,num);
+	public String qnaDetail(@RequestParam(value="qnaBoardNum") Long qnaBoardNum , Model model) { // 1;1문의 상세정보
+		qnaDetailService.qnaDetail(model,qnaBoardNum);
 		return "Qna/qnaDetail";
 	}
 	
 	@RequestMapping("/QnA/qnaBoardReply")  
-	public String qnaBoardReply(@RequestParam(value="num") Long num , Model model) {		//1:1 문의 답변 페이지 이동
-	
-		 qanAnswerService.qnaAnswer(num,model);
+	public String qnaBoardReply(@RequestParam(value="qnaBoardNum") Long qnaBoardNum , Model model) {		//1:1 문의 답변 페이지 이동
+		System.out.println("ddddd" + qnaBoardNum);
+		 qanAnswerService.qnaAnswer(qnaBoardNum,model);
 		
 		return "Qna/qnaAnswerWriter";
 	}
