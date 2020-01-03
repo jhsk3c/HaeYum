@@ -47,11 +47,12 @@ public class LoginController {
 		 
 		 Integer result = loginMainService.LevCheck(model, loginCommand);
 		 session.setAttribute("memLev", result);
-		 session.setAttribute("Lev",result);
+
+		 session.setAttribute("Lev", result);
+
+
 		 
-		 
-		 
-		return "Main/mainView";
+		return "redirect:/main";
 	}
 
 	
@@ -89,7 +90,7 @@ public class LoginController {
 	 
 	 
 	 
-	 return "Main/mainView";
+	 return "redirect:/main";
 	}
 	
 	

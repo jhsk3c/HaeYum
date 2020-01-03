@@ -5,17 +5,17 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
-} 
-
-.navbar {
+  }
+.navbar1 {
   overflow: hidden;
   background-color: #333;
 }
 
-.navbar a {
+.navbar1 a {
   float: left;
   font-size: 16px;
   color: white;
@@ -24,12 +24,12 @@ body {
   text-decoration: none;
 }
 
-.dropdown {
+.dropdown1 {
   float: left;
   overflow: hidden;
 }
 
-.dropdown .dropbtn {
+.dropdown1 .dropbtn1 {
   font-size: 16px;  
   border: none;
   outline: none;
@@ -40,11 +40,11 @@ body {
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar1 a:hover, .dropdown1:hover .dropbtn1 {
   background-color: red;
 }
 
-.dropdown-content {
+.dropdown-content1 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -53,7 +53,7 @@ body {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content1 a {
   float: none;
   color: black;
   padding: 12px 16px;
@@ -62,14 +62,15 @@ body {
   text-align: left;
 }
 
-.dropdown-content a:hover {
+.dropdown-content1 a:hover {
   background-color: #ddd;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown1:hover .dropdown-content1 {
   display: block;
 }
 </style>
+
 </head>
 <body>
 
@@ -77,9 +78,7 @@ body {
   <a href="#">Home</a>
   <a href="QnA/qnaList">고객 센터</a>
   <a href="Car/carCalendaReservationList">car 예약목록</a>
-  <a href="Car/carCalendarList">car 일정</a>
   <a href="contest">Contest</a>
-  <a href="Car/carEnrollmentList">carcar</a>
   <a href="logout">로그아웃</a>
   
   <div class="dropdown">
@@ -93,9 +92,48 @@ body {
     </div>
   </div> 
 </div>
+<div style="display: table; width: 100%; height: 100px;position: relative; overflow: hidden;">
+	<div class="img">
+		<a href="main">
+			<img alt="logo" src="C:\FINAL_Project\HaeYum\src\main\webapp\WEB-INF\view\Main\img" style="float:left">
+		</a>
+	</div>
+	<div style="float:right;margin:40px auto; padding-right:30px;">
+		<a href="profile" style=" text-decoration: none;color:grey"> 프로필 </a>&nbsp;&nbsp;
+		  <a href="logout" style=" text-decoration: none;color:grey">로그아웃</a>&nbsp;&nbsp;
+		    <a href="#" style=" text-decoration: none;color:grey">고객 센터</a>
+	</div>
+</div>
 
-<h3>Dropdown Menu inside a Navigation Bar</h3>
-<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+<div class="navbar1">
+
+  <a href="main">Home</a>
+  <a href="goodsMain">ATO</a>
+  <a href="#">고객 센터</a>
+
+
+  <a href="Car/carCalendarList">car 일정</a>
+  <a href="contest">공모전</a>
+
+
+  
+
+  <div class="dropdown1">
+    <button class="dropbtn1">Dropdown 
+      <i class="fa fa-caret-down1"></i>
+    </button>
+    <div class="dropdown-content1">
+      <a href="spot">휴양지</a>
+      <a href="ActivityList">활동</a>
+      <a href="Car/carEnrollmentList">HaeYumCar</a>
+	  <a href="Car/carCalendarList">HaeYumCar 일정</a>
+	    <a href="Car/carCalendaReservationList">HaeYumCar 예약목록</a>
+      <a href="#">ㅇㅇ</a>
+
+    </div>
+  </div> 
+
+</div>
 
 </body>
 </html>
