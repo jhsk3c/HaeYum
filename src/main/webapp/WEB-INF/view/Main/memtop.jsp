@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,14 +77,12 @@ body {
 
 <div class="navbar1">
   <a href="main">Home</a>
-  <a href="#">고객 센터</a>
-  <a href="Car/carCalendaReservationList">car 예약목록</a>
-  <a href="Car/carCalendarList">car 일정</a>
-  <a href="contest">Contest</a>
+  <a href="goodsMain">ATO</a>
+  <a href="QnA/qnaList">고객 센터</a>
   <a href="Car/carEnrollmentList">carcar</a>
   <a href="logout">로그아웃</a>
   <a href="profile"> 프로필 </a>
-  
+  <a href="ActivityInsert"> 활동 생성</a>
 
   <div class="dropdown1">
     <button class="dropbtn1">Dropdown 
@@ -93,7 +91,9 @@ body {
     <div class="dropdown-content1">
       <a href="spot">휴양지 신청</a>
       <a href="ActivityList">활동</a>
-      <a href="#">Link 3</a>
+      <a href="Car/carWriter">car</a>
+      <a href="Car/carCalendarList">car일정목록</a>
+      
     </div>
   </div> 
 

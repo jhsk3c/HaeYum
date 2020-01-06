@@ -11,6 +11,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
+   <jsp:include page="../Main/memtop.jsp" />
+</div>
 <h2>차 등록  목록</h2>
 <label>번호</label>
 <label>이름</label>

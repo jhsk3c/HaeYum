@@ -174,7 +174,7 @@ function button_event(){
 						<td><fmt:formatDate value="${vsp1.vspotDate }" pattern="yyyy-MM-dd"/></td>
 					</tr>
 				</c:forEach>
-				
+		<%-- 		
 			<div class="container" style="position: relative; left: 35%; top:425px;">
 				<div class="row">
 					<div class="col">
@@ -199,7 +199,7 @@ function button_event(){
 						</ul>
 					</div>
 				</div> 
-			</div>
+			</div> --%>
 	
 			</table>
 		</div>
@@ -240,13 +240,13 @@ function button_event(){
 							<td> 승인 대기 중 </td>
 						</c:if>
 						<c:if test="${shdto1.shopApproval == '승인'}">
-							<td><a href="shopDetail?num=${shdto1.shopNum}">승인 완료 </a></td>
+							<td><a href="shopDetail?num=${shdto1.shopNum}&num2=${shdto1.vspotNum}">승인 완료 </a></td>
 						</c:if>
 						<td><fmt:formatDate value="${shdto1.goodsDate }" pattern="yyyy-MM-dd"/></td>
 					</tr>
 				</c:forEach>
 				
-			<div class="container" style="position: relative; left: 35%; top:235px;">
+		<%-- 	<div class="container" style="position: relative; left: 35%; top:235px;">
 				<div class="row">
 					<div class="col">
 						<ul class="pagination">
@@ -270,7 +270,7 @@ function button_event(){
 						</ul>
 					</div>
 				</div> 
-			</div>
+			</div> --%>
 	
 			</table>
 		</div>
@@ -315,7 +315,7 @@ function button_event(){
 						
 				</c:forEach>
 				
-			<div class="container" style="position: relative; left: 35%; top:200px;">
+		<%-- 	<div class="container" style="position: relative; left: 35%; top:200px;">
 				<div class="row">
 					<div class="col">
 						<ul class="pagination">
@@ -340,7 +340,7 @@ function button_event(){
 					</div>
 				</div> 
 			</div>
-	
+	 --%>
 			</table>
 		</div>
 	</div>
@@ -357,11 +357,13 @@ function button_event(){
 	<div class="w3-container" >
 		<h1> 현재 주체 중인 활동 </h1>
 		<table class="w3-table-all w3-hoverable" style="width:70%">
-				<tr>
-					<td colspan="4" class="w3-right-align">
-						<a href="ActivityInsert"> 활동 등록하러 가기 ! </a>						
-					</td>
-				</tr>
+				<c:if test="${list.activityLev eq null }">
+					<tr>
+						<td colspan="4" class="w3-right-align">
+							<a href="ActivityInsert"> 활동 등록하러 가기 ! </a>						
+						</td>
+					</tr>
+				</c:if>
 				<tr class="w3-light-grey" >
 	      			<th> 주체 날짜 </th>
 	        		<th> 활동 한 줄 소개 </th>
@@ -391,7 +393,7 @@ function button_event(){
 	
 	<div class="w3-container">
 		<h4> 과거 생성했던 활동</h4>
-			<table class="w3-table-all w3-hoverable">
+			<table class="w3-table-all w3-hoverable" style="width:70%">
 				<thead>
 					<tr class="w3-light-grey">
 						<th> 주체 날짜 </th>
@@ -407,10 +409,12 @@ function button_event(){
 			</table>
 	</div>
 
-<h2> 참여 </h2>
+
+
+<div style="text-align:middle"><h2> 참여 </h2></div>
 	<h4> 현재 결제한 활동 </h4>
 		<div class="w3-container">
-			<table class="w3-table-all w3-hoverable">
+			<table class="w3-table-all w3-hoverable" style="width:70%">
 				<thead>
 					<tr>
 						<th>  </th>
@@ -426,7 +430,22 @@ function button_event(){
 			</table>
 		</div>
 	<h4> 과거 참여했던 활동 </h4>
-	
+		<div class="w3-container">
+			<table class="w3-table-all w3-hoverable" style="width:70%">
+				<thead>
+					<tr>
+						<th>  </th>
+						<th>  </th>
+						<th>  </th>
+					</tr>
+				</thead>
+					<tr>
+						<td>  </td>
+						<td>  </td>
+						<td>  </td>
+					</tr>
+			</table>
+		</div>
 	
 	
 	

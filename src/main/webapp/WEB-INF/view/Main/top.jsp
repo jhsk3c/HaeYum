@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,8 +75,8 @@ body {
 
 <div class="navbar1">
   <a href="main">Home</a>
+  <a href="goodsMain">ATO</a>
   <a href="#">고객 센터</a>
-  <a href="contest">Contest</a>
   <a href="login">로그인</a>
   <a href="memberInfo">회원가입</a>
   <a href="comMemberInfo">기업 회원가입</a>

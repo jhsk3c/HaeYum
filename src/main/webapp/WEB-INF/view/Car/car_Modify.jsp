@@ -11,15 +11,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
+   <jsp:include page="../Main/memtop.jsp" />
+</div>
 <form:form action="carEnrollmentModifyPro" method="post" commandName="carWriterCommand" enctype="multipart/form-data">
 ${carDTO.driveName}<br />
 ${carDTO.driveAge}<br />
 <label>운전 면허 종류</label>
 <form:select path="driveLicenseInfo">
-	<form:option value="선택하세요" />
-	<form:option value="1종" />
-	<form:option value="2종" />
-	<form:option value="1종 대형" />
+   <form:option value="선택하세요" />
+   <form:option value="1종" />
+   <form:option value="2종" />
+   <form:option value="1종 대형" />
 </form:select> <br />
 <label>차량 이름</label>
 <form:input path="carName" id="carName"/><br />
@@ -30,12 +33,12 @@ ${carDTO.driveAge}<br />
 <label>차량 크기</label>
 <form:input path="carSize" id="carSize"/><br />
 <label>차량 종류</label>
-		<form:select path="carKinds" id="carKinds" >
-			<form:option value="선택하세요" />
-			<form:option value="소형" />
-			<form:option value="중형" />
-			<form:option value="대형" />
-		</form:select> <br />
+      <form:select path="carKinds" id="carKinds" >
+         <form:option value="선택하세요" />
+         <form:option value="소형" />
+         <form:option value="중형" />
+         <form:option value="대형" />
+      </form:select> <br />
 <label>소개</label><br />
 <form:textarea path="carContent" rows="10" cols="30"></form:textarea><br />
 <label>운전 면허증</label>
